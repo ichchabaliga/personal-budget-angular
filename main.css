@@ -36,7 +36,12 @@ nav.menu ul li a:hover  {
     background-color: white;
     color: #4d5791;
 }
-
+header.headerh1 {
+    background-color: #6075ebf0;
+    padding: 40px;
+    text-align: center;
+    animation: slide 20s linear infinite;
+}
 div.hero {
     height: 350px;
     background-color: #b4c6f0;
@@ -45,7 +50,7 @@ div.hero {
     background-repeat: no-repeat;
     background-position: center bottom;
     padding-top: 40px;
-    animation: slide 20s linear infinite;
+    
 }
 @keyframes slide {
     0% {
