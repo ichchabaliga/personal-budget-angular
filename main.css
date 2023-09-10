@@ -45,7 +45,18 @@ div.hero {
     background-repeat: no-repeat;
     background-position: center bottom;
     padding-top: 40px;
+    animation: slide 20s linear infinite;
 }
+@keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%); /* Slide the background image to the left */
+    }
+  }
+ 
+
 
 div.hero h1,
 div.hero h2 {
