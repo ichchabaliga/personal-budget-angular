@@ -53,6 +53,13 @@ div.hero {
     padding-top: 40px;
     
 }
+h1.header1{
+    /* A11y- highlighting important headings */
+    color: #802200;
+    font-size: 4.2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
 
 img.image2 {
     width: 100%;
