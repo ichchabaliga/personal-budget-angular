@@ -38,7 +38,7 @@ nav.menu ul li a:hover  {
 }
 header.headerh1 {
     
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     /* A11y change - added animation */
     animation: slideDown 1s ease-in-out;
@@ -60,6 +60,7 @@ img.image2 {
     max-width: 768px;
     display: block;
     margin: 0 auto;
+    align-content: center;
 
 }
 
