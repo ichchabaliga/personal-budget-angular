@@ -41,7 +41,7 @@ header.headerh1 {
     padding: 20px;
     text-align: center;
     /* A11y change - added animation */
-    animation: slide 20s linear infinite;
+    animation: slideDown 1s ease-in-out;
 }
 div.hero {
     height: 350px;
@@ -53,15 +53,16 @@ div.hero {
     padding-top: 40px;
     
 }
-@keyframes slide {
+@keyframes slideDown {
     0% {
-      transform: translateX(0);
+        transform: translateY(-100%);
+        opacity: 0;
     }
     100% {
-      transform: translateX(-100%); /* Slide the background image to the left */
+        transform: translateY(0);
+        opacity: 1;
     }
-  }
- 
+}
 
 
 div.hero h1,
