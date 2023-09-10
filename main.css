@@ -37,9 +37,10 @@ nav.menu ul li a:hover  {
     color: #4d5791;
 }
 header.headerh1 {
-    background-color: #6075ebf0;
-    padding: 40px;
+    
+    padding: 20px;
     text-align: center;
+    /* A11y change - added animation */
     animation: slide 20s linear infinite;
 }
 div.hero {
