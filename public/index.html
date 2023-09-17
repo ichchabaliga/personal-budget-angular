@@ -100,16 +100,69 @@
             </div>
     
             <div class="text-box">
-                <h1 class="headingh1">Free</h1>
-                <p>
-                    This app is free!!! And you are the only one holding your data!
-                </p>
+                <h1 class="headingh1">My Chart </h1>
+                <div>
+                <canvas id="myChart" width="400" height="400"> Ichha</canvas>
+                </div>
             </div>
 
         </div>
 
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js" integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/chart.min.js" integrity="sha512-7U4rRB8aGAHGVad3u2jiC7GA5/1YhQcQjxKeaVms/bT66i3LVBMRcBI9KwABNWnxOSwulkuSXxZLGuyfvo7V1A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js" integrity="sha512-G8JE1Xbr0egZE5gNGyUm1fF764iHVfRXshIoUWCTPAbKkkItp/6qal5YAHXrxEu4HNfPTQs6HOu3D5vCGS1j3w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
 
+        var dataSource = {
+                datasets: [{
+                    data: [],
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(255, 205, 86)',
+                        'rgb(54, 162, 235)'
+                    ]
+                }],
+                labels: [
+                ]
+};
+function createChart() {
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myPieChart = new Chart(ctx, {
+        type: 'pie',
+        data: dataSource,
+    //     options: {
+    //         responsive: true,
+    //         maintainAspectRatio: false,
+    //         plugins: {
+    //             legend: {
+    //                 position: 'top',
+    //             },
+    //             title: {
+    //                 display: true,
+    //                 text: 'Expenses'
+    //             }
+    //         }
+    //     },
+    // 
+    });}
+    function getBudget() {
+            axios.get('/budget')
+            .then(function (res){
+                console.log(res.data);
+                for(var i = 0; i < res.data.myBudget.length; i++){
+                    dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
+                    dataSource.labels[i] = res.data.myBudget[i].title;
+                }
+                createChart();
+            });
+        }
+        getBudget();
+// createChart();    
+</script>
+    
     
     <!-- Semantic html change - added footer -->
     <footer class="bottom">
