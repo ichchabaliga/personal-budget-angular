@@ -120,9 +120,13 @@
                 datasets: [{
                     data: [],
                     backgroundColor: [
-                        'rgb(255, 99, 132)',
-                        'rgb(255, 205, 86)',
-                        'rgb(54, 162, 235)'
+                        'rgb(132, 227, 200)',
+                        'rgb(168, 230, 207)',
+                        'rgb(220, 237, 193)',
+                        'rgb(255, 211, 182)',
+                        'rgb(255, 170, 165)',
+                        'rgb(255, 139, 148)',
+                        'rgb(255, 116, 128)'
                     ]
                 }],
                 labels: [
@@ -152,6 +156,7 @@ function createChart() {
             axios.get('/budget')
             .then(function (res){
                 console.log(res.data);
+                console.log(res.data.myBudget.length)
                 for(var i = 0; i < res.data.myBudget.length; i++){
                     dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
                     dataSource.labels[i] = res.data.myBudget[i].title;
